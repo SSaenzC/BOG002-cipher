@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Caesar Cipher</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root">
-      <h1>Hello world!</h1>
-    </div>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Caesar Cipher</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&family=Montserrat&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+	<header>
+		<div> 
+      <h1>En clave</h1>
+      <p class="nota">Cifrado para mensajes</p>
+		</div>
+		<img src="https://illustoon.com/photo/dl/5943.png" class="icono">
+        </header>
+        <main>
+            <div class="offset">
+                <label for="offset">Offset</label>    
+                <input type="text" placeholder="Escribe un número" id="offset" name="offset">
+            </div> 
+            <div class="traductor">
+                <div>
+                 <button id="encodeB">CIFRAR</button>
+                  <textarea class="text" id="encodeT" placeholder="Escribe aqui el texto que quieres cifrar..."></textarea>
+                </div>
+                <div>
+                  <button id="decodeB">DESCIFRAR</button>
+                  <textarea class="text" id="decodeT" placeholder="Escribe aqui el texto que quieres decifrar..."></textarea>
+                </div>
+            </div> 
+        </main>
+        <footer>
+          <p>Desarrollado por: </p>
+          <p><a href="">Diana Sandoval</a> y <a href="">Susan Saenz</a></p>
+        </footer>
     <script src="index.js" type="module"></script>
   </body>
 </html>

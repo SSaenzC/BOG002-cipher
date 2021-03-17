@@ -1,92 +1,53 @@
-# Cifrado César
+# En Clave
+_Desarrollado por Susan Saenz y Diana Sandoval_ 
 
-## Índice
 
-* [1. Preámbulo](#1-preámbulo)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Consideraciones generales](#4-consideraciones-generales)
-* [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Consideraciones técnicas](#7-consideraciones-técnicas)
-* [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
-* [9. Checklist](#9-checklist)
+## Descripción
 
-***
+En este proyecto presentamos una aplicación web que hace uso del Cifrado Cesar para encriptar y decriptar mensajes en la que el usuario puede elegir el desplazamiento para cifrar y para descifrar, aportando seguridad adicional.
 
-## 1. Preámbulo
 
-Cifrar significa codificar. El [cifrado César](https://en.wikipedia.org/wiki/Caesar_cipher)
-es uno de los primeros métodos de cifrado conocidos. El emperador romano Julio
-César lo usaba para enviar órdenes secretas a sus generales en los campos de
-batalla.
+## Instrucciones de uso 
 
-![caeser-cipher](https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Caesar3.svg/2000px-Caesar3.svg.png)
+### Versión web
+Si no quieres descargar ahora, puedes usar una versión web [haciendo click aquí](https://caesar-cipher.susansaenz.repl.co/). 
 
-El cifrado césar es una de las técnicas más simples para cifrar un mensaje. Es
-un tipo de cifrado por sustitución, es decir que cada letra del texto original
-es reemplazada por otra que se encuentra un número fijo de posiciones
-(desplazamiento) más adelante en el mismo alfabeto.
+### Descargar
+Para usarla desde tu equipo, puedes descargar esta carpeta haciendo click en el botón **Code** y luego en **Download ZIP**.
 
-Por ejemplo, si usamos un desplazamiento (_offset_) de 3 posiciones:
+Para abrir deberás descomprimir el _.zip_, entrar a la carpeta src y abrir el _index.html_, este automaticamente se abrirá con tu navegador predeterminado.  
 
-* La letra A se cifra como D.
-* La palabra CASA se cifra como FDVD.
-* Alfabeto sin cifrar: A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
-* Alfabeto cifrado: D E F G H I J K L M N O P Q R S T U V W X Y Z A B C
+### Usar
 
-En la actualidad, todos los cifrados de sustitución simple se descifran con
-mucha facilidad y, aunque en la práctica no ofrecen mucha seguridad en la
-comunicación por sí mismos; el cifrado César sí puede formar parte de sistemas
-más complejos de codificación, como el cifrado Vigenère, e incluso tiene
-aplicación en el sistema ROT13.
+Una vez el usario haya ingresado al sitio web, visualiza que hay tres campos para diligenciar. En el primer campo llamado offset, es donde el usuario ingresará un **número** que corresponde a la cantidad de letras que quiera que se desplacen las letras de su mensaje original para poder cifrarlo. 
 
-## 2. Resumen del proyecto
+Definido el offset a usar, el usuario podra ingresar el mensaje a encriptar en el cuadro de texto ubicado al lado izquierdo de la pantalla, a continuación da click en el botón cifrar y su mensaje encriptado aparecera en el recuadro derecho.
 
-¿Qué tengo que hacer exactamente? En este proyecto crearás una aplicación
-web que servirá para que el usuario pueda cifrar y descifrar un texto indicando
-un desplazamiento específico de caracteres (_offset_).
+Para descifrar el mensaje se debe ingresar el mismo offset con el que fue codificado. Seguidamente se debe ingresar el mensaje a descifrar en el recuadro derecho, se da click en el botón descifrar y el texto desencriptado aparecerá al lado izquierdo de la pantalla. 
 
-La temática es libre. Tú debes pensar en qué situaciones de la vida real se
-necesitaría cifrar un mensaje y pensar en cómo debe ser esa experiencia de uso
-(qué pantallas, explicaciones, mensajes, colores, ¿marca?) etc. Algunas ideas de
-ejemplo:
 
-* Crear claves seguras para el email.
-* Encriptar/cifrar una tarjeta de crédito.
-* Herramienta de mensajería interna de una organización de derechos humanos en
-  una zona de conflicto.
-* Mensajería secreta para parejas.
+## Funcionalidad
 
-## 3. Objetivos de aprendizaje
+La aplicación permite encriptar o decriptar mensajes, remplazando las letras del alfabeto internacional por su correspondiente en el alfabeto cifrado o viceversa. Los caracteres como letras con acentos (á, ä) o de alfabetos diferentes al ingles (ñ), números y simbolos no se encriptan sino que se conservan tal cual en su misma posición. Se puede usar cualquier número para el desplazamiento.
 
-Trabajando en parejas aprenderán a construir una aplicación web que interactuará
-con lx usuarix final a través del navegador, utilizando HTML, CSS y JavaScript
-como tecnologías.
 
-### HTML y CSS
+## Decisiones de diseño
 
-* [ ] [Uso de HTML semántico.](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
-* [ ] Uso de selectores de CSS.
-* [ ] Construir tu aplicación respetando el diseño realizado (maquetación).
+### Perfil del Usuario
+La aplicación está orientada a ser usada por activistas y organizaciones de derechos humanos que se encuentren trabajando en zonas de conflicto, por lo tanto su principal preocupación es la seguridad, necesitan cubrir información sensible para evitar que esta sea vista por personas no autorizadas y de este modo comunicarse de manera efectiva con sus equipos y a la vez preservar su integridad.
 
-### DOM
+### Interfaz 
+La interfaz consta de una sola pantalla en la que se encuentra el encabezado, el espacio del offset que admite cualquier número y 2 secciones cada una con un cuadro de texto y un botón, simulando la interfaz del traductor, el lado izquierdo corresponde al texto decodificado, teniendo sobre él un botón para codificar y el lado derecho al texto codificado con su respectivo botón para decodificar. 
 
-* [ ] Uso de selectores del DOM.
-* [ ] Manejo de eventos del DOM.
-* [ ] [Manipulación dinámica del DOM.](https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Introducci%C3%B3n)
-(appendChild |createElement | createTextNode| innerHTML | textContent | etc.)
+Al codificar el texto, el nuevo mensaje aparece en el cuadro de texto de la derecha y al codificarlo aparece en el cuadro de texto de la izquierda, permitiendo pasar facilmente entre una acción y la otra.
 
-### JavaScript
+El tener las 2 pantallas permite manipular con mayor facilidad textos largos, minimizando la cantidad de mensajes necesarios para comunicarse de manera efectiva sin comprometer la facilidad del manejo para el usuario.
 
-* [ ] Manipulación de strings.
-* [ ] Uso de condicionales (if-else | switch | operador ternario)
-* [ ] Uso de bucles (for | for..in | for..of | while)
-* [ ] Uso de funciones (parámetros | argumentos | valor de retorno)
-* [ ] Declaración correcta de variables (const & let)
+La paleta de colores elegida tiene el azul como color principal, asociado al entendimiento y a la seguridad.
 
-### Testing
+Los campos de texto simulan notas escritas a mano, por lo que se les colocó un color amarillo que asemeja el papel antiguo y tipografía manuscrita.
 
+<<<<<<< HEAD
 * [ ] [Testeo unitario.](https://jestjs.io/docs/es-ES/getting-started)
 
 ### Estructura del código y guía de estilo
@@ -358,3 +319,5 @@ Esta sección está para ayudarte a llevar un control de lo que vas completando.
 * [ ] Cifra/descifra minúsculas
 * [ ] Cifra/descifra _otros_ caracteres (espacios, puntuación, `ñ`, `á`, ...)
 * [ ] Permite usar un `offset` negativo.
+=======
+>>>>>>> af330651c5e726c038c08dd02b58e77b3b06d1a8
